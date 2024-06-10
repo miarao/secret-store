@@ -1,0 +1,18 @@
+[package]
+name = "secretx"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cosmwasm-std = { version = "2.0.4", features = ["staking"] }
+serde = { version = "1.0.203",  default-features = false, features = ["derive"] }
+cw-storage-plus = "2.0.0"
+thiserror = "1.0.61"
+
+[dev-dependencies]
+cw-multi-test = "2.0.1"
+
+[alias]
+wasm = "build --target wasm32-unknown-unknown --release"
+wasmfmt = "cargo fmt && build --target wasm32-unknown-unknown --release"
+wasm-debug = "build --target wasm32-unknown-unknown"
